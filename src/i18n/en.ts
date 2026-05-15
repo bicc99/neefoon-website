@@ -178,6 +178,12 @@ export const en = {
   'cur.usd': 'USD',
   'cur.thb': 'THB',
 
+  '404.eyebrow': 'Page not found',
+  '404.title1':  'Lost in',
+  '404.title2':  'the smog?',
+  '404.sub':     'This page doesn\'t exist or may have moved. Let\'s get you back to clean air.',
+  '404.btn':     'Back to Home',
+
   'sup.altEy':    'Other ways to help',
   'sup.altTitle': 'Free things that help just as much.',
   'alt1.n': 'Rate the app',

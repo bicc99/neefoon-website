@@ -1,0 +1,92 @@
+/* =================== 404 Not Found page =================== */
+
+.nf {
+  min-height: 70vh;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) var(--pad);
+}
+
+/* Hero section — positioned so the decorative background number sits behind the text */
+.nf__hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: clamp(48px, 8vw, 96px) 0;
+}
+
+/* Large "404" rendered behind the content — gives visual weight without extra imagery */
+.nf__bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: clamp(140px, 22vw, 280px);
+  font-weight: 900;
+  letter-spacing: -.05em;
+  color: var(--ink-100);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  /* Slight left offset so the number feels anchored without covering the text */
+  padding-left: 0;
+}
+
+.nf__content {
+  position: relative; /* sits above .nf__bg */
+  z-index: 1;
+  max-width: 520px;
+}
+
+.nf__title {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  line-height: 1.05;
+  margin: 0 0 18px;
+  text-wrap: balance;
+}
+
+.nf__sub {
+  color: var(--ink-500);
+  font-size: clamp(15px, 1.4vw, 17.5px);
+  margin: 0 0 36px;
+  text-wrap: pretty;
+  line-height: 1.6;
+}
+
+/* Back-to-home button — matches the filled teal/primary style used site-wide */
+.nf__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--teal-800);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -.005em;
+  padding: 12px 24px;
+  border-radius: var(--r-sm);
+  box-shadow: 0 1px 2px rgba(10,79,68,.1);
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.nf__btn:hover {
+  background: var(--teal-700);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -4px rgba(15,122,107,.4), 0 2px 4px rgba(10,79,68,.1);
+}
+
+@media (max-width: 720px) {
+  .nf__bg {
+    /* Scale down the decorative number on mobile so it doesn't overflow */
+    font-size: clamp(100px, 30vw, 160px);
+    opacity: 0.6;
+  }
+
+  .nf__btn {
+    display: flex;
+    justify-content: center;
+  }
+}
