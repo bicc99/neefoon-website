@@ -14,14 +14,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     const saved = localStorage.getItem('lang');
     if (saved === 'th' || saved === 'en') return saved;
 
-    // No saved preference — infer from browser locale and timezone.
-    // navigator.language is a BCP 47 tag like "th", "th-TH", "en-US", etc.
-    const browserIsThai = navigator.language.startsWith('th');
-    // Thailand has one timezone. Treat it as a strong Thai signal even when
-    // the user's browser is set to English (common on expat/developer machines).
-    const timezoneIsThai = timezone === 'Asia/Bangkok';
-
-    return browserIsThai || timezoneIsThai ? 'th' : 'en';
+    // No saved preference — use timezone as the sole signal.
+    // Thailand has one timezone, so this reliably identifies Thai users
+    // regardless of what language their browser is set to.
+    return timezone === 'Asia/Bangkok' ? 'th' : 'en';
   });
 
   // Sync both localStorage and <html lang="..."> whenever the language changes.
