@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="682.66669" height="682.66669" aria-hidden="true">
+  <g fill="currentColor">
+    <!-- Fully fillable outer rounded-square ring -->
+    <path fill-rule="evenodd" d="M112 20h288c50.81 0 92 41.19 92 92v288c0 50.81-41.19 92-92 92H112c-50.81 0-92-41.19-92-92V112c0-50.81 41.19-92 92-92Zm0 40c-28.72 0-52 23.28-52 52v288c0 28.72 23.28 52 52 52h288c28.72 0 52-23.28 52-52V112c0-28.72-23.28-52-52-52H112Z"/>
+    <!-- Fully fillable camera lens ring -->
+    <path fill-rule="evenodd" d="M256 146c60.75 0 110 49.25 110 110s-49.25 110-110 110-110-49.25-110-110 49.25-110 110-110Zm0 40c-38.66 0-70 31.34-70 70s31.34 70 70 70 70-31.34 70-70-31.34-70-70-70Z"/>
+    <!-- Fully fillable top-right dot -->
+    <circle cx="372" cy="140" r="25"/>
+  </g>
+</svg>

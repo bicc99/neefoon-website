@@ -1,0 +1,18 @@
+/* Design tokens and resets */
+@import './styles/base.css';
+
+/* Cross-page utilities: breadcrumbs, reveal animation, gradient text,
+   eyebrow labels, section headings, and shared button variants */
+@import './styles/shared.css';
+
+/* Layout chrome */
+@import './styles/navbar.css';
+@import './styles/footer.css';
+
+/* Privacy / Terms doc layout */
+@import './styles/docs.css';
+
+/* Page-specific styles */
+@import './styles/support-page.css';
+@import './styles/about.css';
+@import './styles/home.css';

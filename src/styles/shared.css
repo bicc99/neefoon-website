@@ -1,0 +1,160 @@
+/* =================== Breadcrumbs =================== */
+.crumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-500);
+  margin-bottom: 28px;
+  font-weight: 500;
+}
+
+.crumbs a {
+  padding: 4px 2px;
+  transition: color .15s ease;
+}
+
+.crumbs a:hover {
+  color: var(--teal-800);
+  text-decoration: underline;
+  /* text-underline-offset: 3px; */
+}
+
+.crumbs__sep {
+  color: var(--ink-300);
+  font-weight: 400;
+  user-select: none;
+}
+
+.crumbs__group {
+  cursor: default;
+  pointer-events: none;
+}
+
+.crumbs__current {
+  color: var(--ink-900);
+  font-weight: 600;
+  user-select: none;
+}
+
+@media (max-width: 720px) {.crumbs { font-size: 12.5px; margin-bottom: 20px; gap: 6px;}}
+
+/* =================== Scroll-reveal animation =================== */
+/* Elements start invisible and slightly shifted down; useReveal adds .is-in
+   via IntersectionObserver once they enter the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px) scale(.985);
+  transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
+
+/* =================== Shared text utilities =================== */
+
+/* Gradient text — used on hero titles, About hero, and Support hero */
+.gradient {
+  background: linear-gradient(135deg, var(--teal-800) 0%, var(--teal-700) 55%, var(--mint) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* must be transparent so the clipped gradient shows through */
+}
+
+/* Mono eyebrow label above section headings */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--teal-800);
+  margin-bottom: 14px;
+}
+
+/* Eyebrow variant used on dark backgrounds (e.g. support CTA card) */
+.eyebrow--dark { color: rgba(255,255,255,.75); }
+
+/* Section heading + subheading — shared across Support, Home, and About */
+.section__title {
+  font-size: clamp(30px, 4.4vw, 52px);
+  font-weight: 800;
+  letter-spacing: -.022em;
+  line-height: 1.05;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+
+.section__sub {
+  color: var(--ink-500);
+  font-size: clamp(15px, 1.4vw, 17.5px);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* =================== Buttons =================== */
+
+/* Filled Stripe-branded CTA button — used on Support and About pages */
+.btn--stripeFilled {
+  background: var(--stripe);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -.005em;
+  padding: 12px 22px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid var(--stripe);
+  box-shadow: 0 1px 2px rgba(20,15,90,.08);
+  transition: background .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.btn--stripeFilled:hover {
+  background: #5247E0;
+  border-color: #5247E0;
+  box-shadow: 0 6px 16px -4px rgba(99,91,255,.45), 0 2px 4px rgba(20,15,90,.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .btn--stripeFilled {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Base button — used in the home support CTA card */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 14px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn:hover { transform: translateY(-2px);  }
+
+.btn--stripe {
+  background: #fff;
+  color: #635BFF;
+  box-shadow: 0 8px 24px -10px rgba(99, 91, 255, .45), 0 0 0 1px rgba(99, 91, 255, .12) inset;
+}
+
+.btn--stripe:hover {
+  box-shadow: 0 14px 30px -10px rgba(99,91,255,.5), 0 0 0 1px rgba(99, 91, 255, .2) inset;
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, .25);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .25);
+}

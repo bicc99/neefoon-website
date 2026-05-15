@@ -1,0 +1,54 @@
+/* ============== Doc pages (privacy / terms) ============== */
+.doc {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 80px) 24px clamp(60px, 8vw, 100px);
+}
+
+.doc h1 {
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 800;
+  letter-spacing: -.022em;
+  margin: 0 0 14px;
+}
+.doc .doc__lede {
+  color: var(--ink-500);
+  font-size: 17px;
+  margin: 0 0 36px;
+}
+
+.doc h2 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -.3px;
+  margin: 32px 0 12px;
+}
+
+.doc h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 22px 0 8px;
+}
+
+.doc p {
+  color: var(--ink-700);
+  font-size: 15.5px;
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+.doc ul {
+  color: var(--ink-700);
+  font-size: 15.5px;
+  line-height: 1.65;
+  padding-left: 22px;
+}
+
+.doc ul li { margin-bottom: 6px; }
+
+.doc__updated {
+  color: var(--ink-400);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-top: 32px;
+}
