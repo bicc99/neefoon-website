@@ -1,5 +1,3 @@
-import { useLanguage } from '../../i18n/LanguageContext';
-
 import imgAir4thai    from '../../assets/images/air4thai.avif';
 import imgAirGradient from '../../assets/images/airgradient.avif';
 import imgCUsense     from '../../assets/images/CUsense.avif';
