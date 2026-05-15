@@ -15,7 +15,6 @@ const DATA_SOURCES: DataSource[] = [
 ];
 
 function DataSourcesSection() {
-  const { t } = useLanguage();
 
   return (
     <section className="dataSources reveal" data-reveal aria-labelledby="dataSourcesLabel">
