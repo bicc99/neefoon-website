@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ScrollToTop from "./components/ScrollToTop";
-import { LanguageProvider } from "./i18n/LanguageContext";
+import { LanguageProvider } from "./i18n/LanguageProvider";
 
 function App() {
   return (
