@@ -43,7 +43,7 @@ function Privacy() {
       <p>Neefoon is not directed at children under 13 and does not knowingly collect data from them.</p>
 
       <h2>5. Your rights</h2>
-      <p>Because we don't collect personal data, there's nothing tied to you to access, correct, or delete. If you have questions, email <a href="mailto:support_neefoon@gmail.com" style={{color: "var(--teal-800)"}}>support_neefoon@gmail.com</a>.</p>
+      <p>Because we don't collect personal data, there's nothing tied to you to access, correct, or delete. If you have questions, email <a href="mailto:support.neefoon@gmail.com" style={{color: "var(--teal-800)"}}>support.neefoon@gmail.com</a>.</p>
 
       <h2>6. Changes</h2>
       <p>If this policy changes, we'll update the date below and, for material changes, surface a notice in the app.</p>

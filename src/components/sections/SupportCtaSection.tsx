@@ -32,11 +32,11 @@ function SupportCtaSection() {
               <IconStripe2 width={14} height={14} fill="currentColor" />
               <span>{t('support.btn')}</span>
             </Link>
-            <a className="btn btn--ghost" href="mailto:support_neefoon@gmail.com">
+            <a className="btn btn--ghost" href="mailto:support.neefoon@gmail.com">
               <span>{t('support.btnAlt')}</span>
             </a>
           </div>
-          <div className="support__small">support_neefoon@gmail.com</div>
+          <div className="support__small">support.neefoon@gmail.com</div>
         </div>
       </div>
     </section>

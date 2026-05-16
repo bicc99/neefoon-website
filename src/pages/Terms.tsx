@@ -43,7 +43,7 @@ function Terms() {
       <p>We may update these terms from time to time. Continued use of the app after changes constitutes acceptance of the revised terms.</p>
 
       <h2>8. Contact</h2>
-      <p>Questions about these terms: <a href="mailto:support_neefoon@gmail.com" style={{color: "var(--teal-800)"}}>support_neefoon@gmail.com</a>.</p>
+      <p>Questions about these terms: <a href="mailto:support.neefoon@gmail.com" style={{color: "var(--teal-800)"}}>support.neefoon@gmail.com</a>.</p>
 
       <div className="doc__updated">Last updated: 1 May 2026</div>
   </main>

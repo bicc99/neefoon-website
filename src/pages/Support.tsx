@@ -62,7 +62,6 @@ const FAQ_ITEMS: FaqItem[] = [
   { questionKey: 'sf.q1', answerKey: 'sf.a1' },
   { questionKey: 'sf.q2', answerKey: 'sf.a2' },
   { questionKey: 'sf.q3', answerKey: 'sf.a3' },
-  { questionKey: 'sf.q4', answerKey: 'sf.a4' },
 ];
 
 // ── Component ─────────────────────────────────────────────────────────────────
@@ -382,7 +381,7 @@ function Support() {
           </div>
         </div>
         <div className="sup__contact">
-          <a href="mailto:support_neefoon@gmail.com" className="sup__email">support_neefoon@gmail.com</a>
+          <a href="mailto:support.neefoon@gmail.com" className="sup__email">support.neefoon@gmail.com</a>
         </div>
       </section>
     </main>

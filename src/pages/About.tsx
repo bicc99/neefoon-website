@@ -117,7 +117,7 @@ function About() {
           <p className="maker__bio" data-i18n="m1.b">{t('m1.b')}</p>
           <div className="maker__contact">
             <div className="maker__socials" aria-label="Social links">
-              <a className="maker__social" href="mailto:support_neefoon@gmail.com" aria-label="Email">
+              <a className="maker__social" href="mailto:support.neefoon@gmail.com" aria-label="Email">
                 <IconEmail width={16} height={16} aria-hidden="true"/>
               </a>
               <a className="maker__social" href="https://au.linkedin.com/in/bicc99" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">

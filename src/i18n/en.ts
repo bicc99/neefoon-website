@@ -173,7 +173,7 @@ export const en = {
   'sf.q3': 'Can I donate from Thailand with PromptPay?',
   'sf.a3': 'Yes — Stripe supports PromptPay alongside cards, Apple Pay and Google Pay at checkout.',
   'sf.q4': 'Refunds?',
-  'sf.a4': "Email support_neefoon@gmail.com within 14 days and I'll process a full refund through Stripe — no questions asked.",
+  'sf.a4': "Email support.neefoon@gmail.com within 14 days and I'll process a full refund through Stripe — no questions asked.",
 
   'cur.usd': 'USD',
   'cur.thb': 'THB',
@@ -192,6 +192,14 @@ export const en = {
   'alt2.d': 'If you live where the air gets bad, share the app with someone who needs it too.',
   'alt3.n': 'Send feedback',
   'alt3.d': 'Bug reports, feature ideas — every email is read.',
+
+  // ── Thank-you page (post-donation redirect) ─────────────────────────────────
+  'ty.current': 'Thanks',
+  'ty.eyebrow': 'Donation received',
+  'ty.title1':  'Thank you for',
+  'ty.title2':  'your support.',
+  'ty.sub':     'Your contribution helps keep Neefoon free and ad-free. Stripe will send a receipt to your email shortly.',
+  'ty.btn':     'Back to Home',
 } as const;
 
 // TranslationKey is the union of every valid key string (e.g. 'hero.pill' | 'nav.home' | ...).
