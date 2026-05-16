@@ -58,6 +58,7 @@
   margin: 0 0 18px;
 }
 html[lang="th"] .sup__title { line-height: 1.5;}
+html[lang="th"] .sup__title .gradient { padding-top: 0.3em; }
 
 @media (max-width: 480px) {
   .sup__title { font-size: clamp(32px, 9vw, 40px); }
