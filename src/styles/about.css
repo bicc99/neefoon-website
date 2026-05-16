@@ -59,7 +59,7 @@
   color: var(--teal-900);
   margin: 16px 0 22px;
 }
-html[lang="th"] .abt__title { line-height: 1.5; }
+html[lang="th"] .abt__title { line-height: 1.4; }
 html[lang="th"] .abt__title .gradient { padding-top: 0.3em; }
 
 @media (max-width: 480px) { .abt__title { font-size: clamp(32px, 9vw, 40px); } }
