@@ -206,7 +206,7 @@ function Support() {
             <button className="btn--stripeFilled" onClick={handleDonate} disabled={isRedirecting || !canDonate} id="ctaPrimary">
               <IconStripe2 width={14} height={14} fill="#fff" />
               {/* t('sup.cta') = "Donate" / "บริจาค" — the amount is dynamic and reflects the active currency */}
-              <span><span>{isRedirecting ? '...' : t('sup.cta')}</span> <span id="ctaAmount">{sym}{displayAmt}</span></span>
+              <span><span>{isRedirecting ? t('sup.redirecting') : t('sup.cta')}</span>{!isRedirecting && <span id="ctaAmount"> {sym}{displayAmt}</span>}</span>
             </button>
             <span className="sup__quickHint">{t('sup.quickHint')}</span>
           </div>
@@ -274,7 +274,7 @@ function Support() {
 
           <button className="btn--stripeFilled" onClick={handleDonate} disabled={isRedirecting || !canDonate} id="ctaPrimary2">
             <IconStripe2 width={14} height={14} fill="#fff" />
-            <span><span>{isRedirecting ? '...' : t('sup.continue')}</span> · <span id="ctaAmount2">{sym}{displayAmt}</span></span>
+            <span><span>{isRedirecting ? t('sup.redirecting') : t('sup.continue')}</span>{!isRedirecting && <span id="ctaAmount2"> · {sym}{displayAmt}</span>}</span>
           </button>
           {donateError && <p className="sup__donateError">{donateError}</p>}
 

@@ -136,6 +136,7 @@ export const en = {
   'sup.title2':    'flowing.',
   'sup.lede':      'Neefoon is built and maintained by an independent developer. There are no ads, no signup, no paywall. If the app helps you breathe easier, a one-time contribution keeps the servers running and new features shipping.',
   'sup.cta':       'Donate',
+  'sup.redirecting': 'Please wait',
   'sup.quickHint': 'Pick an amount below or enter your own.',
 
   'sup.amountEy':    'Choose an amount',
