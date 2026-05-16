@@ -123,6 +123,20 @@
   transform: translateY(-2px);
 }
 
+/* Spinner shown inside the button while Stripe redirect is in progress */
+.btn__spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: btn-spin .7s linear infinite;
+  flex-shrink: 0;
+}
+@keyframes btn-spin {
+  to { transform: rotate(360deg); }
+}
+
 @media (max-width: 720px) {
   .btn--stripeFilled {
     display: flex;
