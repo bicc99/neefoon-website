@@ -47,6 +47,9 @@ The site also uses a lightweight custom i18n system (English and Thai) built on 
 # Install dependencies
 npm install
 
+# Copy the example env file and fill in your values
+cp .env.example .env
+
 # Start the development server
 npm run dev
 
@@ -56,6 +59,18 @@ npm run build
 # Preview the production build locally
 npm run preview
 ```
+
+---
+
+## Environment Variables
+
+Copy `.env.example` to `.env` before running the dev server or building.
+
+| Variable         | Description                              | Example                               |
+| ---------------- | ---------------------------------------- | ------------------------------------- |
+| `VITE_API_URL` | URL of the backend API (AQI data server) | `http://localhost:3000` (local dev) |
+
+For production, set `VITE_API_URL` to your production API URL.
 
 ---
 

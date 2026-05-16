@@ -108,6 +108,8 @@ html[lang="th"] .sup__lede { max-width: 57ch; }
 
 @media (max-width: 720px) {
   .sup__amount { padding: 32px 24px; }
+  /* Expand donate button to fill the card width on small screens */
+  .sup__amount .btn--stripeFilled { width: 100%; }
 }
 
 .sup__amountHead {
@@ -280,6 +282,12 @@ html[lang="th"] .cur__pill { width: 136px; }
   .amount--custom .amount__input {
     width: 6ch;
   }
+}
+
+.sup__donateError {
+  margin-top: 12px;
+  font-size: 13px;
+  color: #c0392b;
 }
 
 .sup__methods {

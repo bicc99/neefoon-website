@@ -20,6 +20,10 @@ import IconSecurity  from "../assets/icons/shield_card_24dp_1F1F1F_FILL0_wght400
 import IconLock      from "../assets/icons/lock_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg?react";
 import IconClock     from "../assets/icons/schedule_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg?react";
 
+// Vite exposes env variables prefixed with VITE_ to the browser bundle.
+// In development this points to localhost; in production set it to your Render URL.
+const API_URL = import.meta.env.VITE_API_URL as string;
+
 // The two currencies users can toggle between
 type Currency = 'USD' | 'THB';
 
@@ -78,10 +82,44 @@ function Support() {
   const sym = currency === 'USD' ? '$' : '฿';
   const presets = PRESETS[currency];
 
+  const [isRedirecting, setIsRedirecting] = useState(false);
+  const [donateError, setDonateError] = useState<string | null>(null);
+
   // The amount shown in both CTA buttons: whichever source is active
   const displayAmt = activePresetIndex !== null
     ? presets[activePresetIndex]
     : (parseInt(customValue, 10) || 0);
+
+  // True only when a valid amount is entered — used to enable/disable the donate buttons.
+  const canDonate = displayAmt > 0;
+
+  async function handleDonate() {
+    if (isRedirecting || !canDonate) return;
+
+    setIsRedirecting(true);
+    setDonateError(null);
+
+    try {
+      const res = await fetch(`${API_URL}/api/stripe/create-checkout-session`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ amount: displayAmt, currency }),
+      });
+
+      const data = await res.json() as { url?: string; error?: string };
+
+      if (!res.ok) {
+        throw new Error(data.error ?? 'Something went wrong');
+      }
+
+      // Redirect the user to Stripe's hosted checkout page.
+      window.location.href = data.url!;
+    } catch (err) {
+      console.error('Stripe redirect failed', err);
+      setDonateError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+      setIsRedirecting(false);
+    }
+  }
 
   function handlePresetClick(index: number) {
     setActivePresetIndex(index);
@@ -166,11 +204,11 @@ function Support() {
           <p className="sup__lede">{t('sup.lede')}</p>
 
           <div className="sup__quickRow">
-            <a className="btn--stripeFilled" href="https://buy.stripe.com/test_eVq00c7IR6IgaSfd8Jds400" target="_blank" rel="noreferrer" id="ctaPrimary">
+            <button className="btn--stripeFilled" onClick={handleDonate} disabled={isRedirecting || !canDonate} id="ctaPrimary">
               <IconStripe2 width={14} height={14} fill="#fff" />
               {/* t('sup.cta') = "Donate" / "บริจาค" — the amount is dynamic and reflects the active currency */}
-              <span><span>{t('sup.cta')}</span> <span id="ctaAmount">{sym}{displayAmt}</span></span>
-            </a>
+              <span><span>{isRedirecting ? '...' : t('sup.cta')}</span> <span id="ctaAmount">{sym}{displayAmt}</span></span>
+            </button>
             <span className="sup__quickHint">{t('sup.quickHint')}</span>
           </div>
         </div>
@@ -235,10 +273,11 @@ function Support() {
           </label>
         </div>
 
-        <a className="btn--stripeFilled" href="https://buy.stripe.com/test_eVq00c7IR6IgaSfd8Jds400" target="_blank" rel="noreferrer" id="ctaPrimary2">
-          <IconStripe2 width={14} height={14} fill="#fff" />
-          <span><span>{t('sup.continue')}</span> · <span id="ctaAmount2">{sym}{displayAmt}</span></span>
-        </a>
+          <button className="btn--stripeFilled" onClick={handleDonate} disabled={isRedirecting || !canDonate} id="ctaPrimary2">
+            <IconStripe2 width={14} height={14} fill="#fff" />
+            <span><span>{isRedirecting ? '...' : t('sup.continue')}</span> · <span id="ctaAmount2">{sym}{displayAmt}</span></span>
+          </button>
+          {donateError && <p className="sup__donateError">{donateError}</p>}
 
         <div className="sup__methods">
           <span className="sup__methodsLbl">{t('sup.methodsLbl')}</span>
