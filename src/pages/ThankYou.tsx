@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useReveal } from "../hooks/useReveal";
@@ -8,7 +9,13 @@ function ThankYou() {
   useReveal();
 
   return (
-    <main className="ty">
+    <>
+      <Helmet>
+        <title>Thank You - Neefoon</title>
+        {/* noindex keeps the post-donation confirmation page out of Google results */}
+        <meta name="robots" content="noindex" />
+      </Helmet>
+      <main className="ty">
 
       {/* Breadcrumb */}
       <nav className="crumbs" aria-label="Breadcrumb">
@@ -37,6 +44,7 @@ function ThankYou() {
       </section>
 
     </main>
+    </>
   );
 }
 

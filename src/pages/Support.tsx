@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from "../i18n/LanguageContext";
 import { useReveal } from "../hooks/useReveal";
 import { Link } from "react-router-dom";
@@ -180,7 +181,12 @@ function Support() {
   }
 
   return (
-    <main className="sup">
+    <>
+      <Helmet>
+        <title>Support Neefoon - Keep Air Data Free</title>
+        <meta name="description" content="Neefoon is free, ad-free, and built by one developer. A small one-time donation keeps the servers running and new features shipping." />
+      </Helmet>
+      <main className="sup">
       {/* Breadcrumb */}
       <nav className="crumbs" aria-label="Breadcrumb">
         <Link to="/">{t('nav.home')}</Link>
@@ -385,6 +391,7 @@ function Support() {
         </div>
       </section>
     </main>
+    </>
   );
 }
 

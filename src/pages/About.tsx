@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useReveal } from "../hooks/useReveal";
@@ -12,7 +13,12 @@ function About() {
   useReveal();
 
   return (
-    <main className="abt">
+    <>
+      <Helmet>
+        <title>About – Neefoon</title>
+        <meta name="description" content="Neefoon (หนีฝุ่น) means 'escape the dust' in Thai. Built by one independent developer to make air quality readable for Thailand, Southeast Asia, and the world." />
+      </Helmet>
+      <main className="abt">
 
     {/* Breadcrumb */}
       <nav className="crumbs" aria-label="Breadcrumb">
@@ -151,6 +157,7 @@ function About() {
 
 
   </main>
+    </>
   );
 }
 

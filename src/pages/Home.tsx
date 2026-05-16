@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useReveal } from '../hooks/useReveal';
 import HeroSection          from '../components/sections/HeroSection';
 import AqiExplainerSection  from '../components/sections/AqiExplainerSection';
@@ -13,7 +14,12 @@ function Home() {
   useReveal();
 
   return (
-    <main>
+    <>
+      <Helmet>
+        <title>Neefoon - Real-Time Air Quality & AQI App</title>
+        <meta name="description" content="Neefoon brings real-time AQI, fire hotspot maps, and station-level pollutant data to your pocket. Free, no ads, no signup. Thailand, Southeast Asia, and worldwide coverage." />
+      </Helmet>
+      <main>
       <HeroSection />
       <AqiExplainerSection />
       <FeaturesSection />
@@ -22,6 +28,7 @@ function Home() {
       <SupportCtaSection />
       <FinalCtaSection />
     </main>
+    </>
   );
 }
 

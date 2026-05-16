@@ -1,10 +1,16 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 import { useReveal } from "../hooks/useReveal";
 
 function Privacy() {
   useReveal();
   return (
-    <main className="doc reveal" data-reveal>
+    <>
+      <Helmet>
+        <title>Privacy Policy - Neefoon</title>
+        <meta name="description" content="Neefoon collects no personal data. No accounts, no tracking, no data collection of any kind. Your location stays on your device and never leaves it." />
+      </Helmet>
+      <main className="doc reveal" data-reveal>
       <nav className="crumbs" aria-label="Breadcrumb">
         <Link to={"/"}>Home</Link>
         <span className="crumbs__sep" aria-hidden="true">/</span>
@@ -55,6 +61,7 @@ function Privacy() {
 
 
     </main>
+    </>
   );
 }
 

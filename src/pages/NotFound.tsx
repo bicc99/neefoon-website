@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 import { useLanguage } from "../i18n/LanguageContext";
 import { useReveal } from "../hooks/useReveal";
@@ -8,7 +9,12 @@ function NotFound() {
   useReveal();
 
   return (
-    <main className="nf">
+    <>
+      <Helmet>
+        <title>Page Not Found - Neefoon</title>
+        <meta name="robots" content="noindex" />
+      </Helmet>
+      <main className="nf">
 
       {/* Breadcrumb */}
       <nav className="crumbs" aria-label="Breadcrumb">
@@ -35,6 +41,7 @@ function NotFound() {
       </section>
 
     </main>
+    </>
   );
 }
 

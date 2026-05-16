@@ -1,10 +1,16 @@
+import { Helmet } from 'react-helmet-async';
 import { Link } from "react-router-dom";
 import { useReveal } from "../hooks/useReveal";
 
 function Terms() {
   useReveal();
   return (
-  <main className="doc reveal" data-reveal>
+    <>
+      <Helmet>
+        <title>Terms of Service - Neefoon</title>
+        <meta name="description" content="Terms of service for Neefoon, the free real-time AQI and air quality app for Thailand, Southeast Asia, and worldwide." />
+      </Helmet>
+      <main className="doc reveal" data-reveal>
     {/* ---------- Breadcrumb ---------- */}
     <nav className="crumbs" aria-label="Breadcrumb">
       <Link to={"/"}>Home</Link>
@@ -47,6 +53,7 @@ function Terms() {
 
       <div className="doc__updated">Last updated: 1 May 2026</div>
   </main>
+    </>
   );
 }
 
