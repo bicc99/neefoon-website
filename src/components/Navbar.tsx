@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NeefoonLogo from "../assets/icons/Neefoo-bw-logo-v3-fill-currentColor.svg?react";
 import IconBurger from "../assets/icons/menu_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg?react"
@@ -7,10 +7,23 @@ import { useLanguage } from "../i18n/LanguageContext";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isStuck, setIsStuck] = useState(false);
   const { lang, setLang, t } = useLanguage();
 
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show the border once the user scrolls more than 8px from the top
+      setIsStuck(window.scrollY > 8);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Clean up the listener when the component unmounts
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className={`navbar${isMenuOpen ? " is-open" : ""}`}>
+    <header className={`navbar${isMenuOpen ? " is-open" : ""}${isStuck ? " is-stuck" : ""}`}>
       <Link className="nav__brand" to="/">
         <span className="logo">
           <NeefoonLogo aria-hidden="true" />
