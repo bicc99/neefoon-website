@@ -100,7 +100,7 @@ function Support() {
     setDonateError(null);
 
     try {
-      const res = await fetch(`${API_URL}/api/stripe/create-checkout-session`, {
+      const res = await fetch(`${API_URL}/stripe/create-checkout-session`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: displayAmt, currency }),
