@@ -9,14 +9,26 @@ function StoreButtons() {
 
   return (
     <div className="store-btns">
-      <a className="store" href="#" aria-label="Download on the App Store">
+      <a
+        className="store"
+        href="https://apps.apple.com/app/id6777892271"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download on the App Store"
+      >
         <IconApple width={18} height={18} aria-hidden="true" />
         <span className="store__lines">
           <span className="store__small">{t('store.applePre')}</span>
           <span className="store__big">App Store</span>
         </span>
       </a>
-      <a className="store store__google" href="#" aria-label="Get it on Google Play">
+      <a
+        className="store store__google"
+        href="https://play.google.com/store/apps/details?id=com.neefoon.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Get it on Google Play"
+      >
         <IconGplay width={18} height={18} aria-hidden="true" />
         <span className="store__lines">
           <span className="store__small">{t('store.googlePre')}</span>
